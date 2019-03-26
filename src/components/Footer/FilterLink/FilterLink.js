@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './FilterLink.css';
 
-const Link = ({ active, children, onClick }) => (
+const FilterLink = ({ active, children, onClick }) => (
 	<button
 		onClick={onClick}
 		disabled={active}
@@ -11,10 +12,10 @@ const Link = ({ active, children, onClick }) => (
 	</button>
 );
 
-Link.propTypes = {
+FilterLink.propTypes = {
 	active: PropTypes.bool.isRequired,
 	children: PropTypes.node.isRequired,
 	onClick: PropTypes.func.isRequired
 };
 
-export default Link;
+export default FilterLink;

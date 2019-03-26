@@ -1,4 +1,4 @@
-import { FilterOptions } from '../actions';
+import { FilterOptions } from '../actions/types';
 
 const renderingFilter = (state = FilterOptions.SHOW_ALL_ITEMS, action) => {
 	switch (action.type) {

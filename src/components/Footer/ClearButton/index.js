@@ -1,6 +1,6 @@
+import ClearButton from './ClearButton';
 import { connect } from 'react-redux';
-import { clearCompletedItems } from '../actions';
-import ClearButton from '../components/ClearButton';
+import { clearCompletedItems } from '../../../store/actions';
 
 const mapStateToProps = (state) => ({
 	items: state.todoItems

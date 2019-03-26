@@ -1,10 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { addItem, toggleAllItems } from '../actions';
+import PropTypes from 'prop-types';
 
-const InputForm = ({ dispatch }) => {
+import './InputForm.css';
+
+
+const InputForm = ({ addItem, toggleAllItems }) => {
+	
 	let input, checkInput;
 	const placeholder = 'What needs to be done?';
+
 	return (
 		<form 
 			onSubmit={e => {
@@ -13,7 +17,7 @@ const InputForm = ({ dispatch }) => {
 					alert('Nothing was typed');
 					return;
 				}
-				dispatch(addItem(input.value));
+				addItem(input.value);
 				input.value = '';
 				checkInput.checked = false;
 			}}>
@@ -21,7 +25,7 @@ const InputForm = ({ dispatch }) => {
 				<div className="input-group-prepend">
 					<div className="input-group-text">
 						<input
-							onClick={ () => dispatch(toggleAllItems()) } 
+							onClick={ () => toggleAllItems() } 
 							type="checkbox" 
 							aria-label="Checkbox for following text input"
 							ref={node => (checkInput = node)}	
@@ -40,4 +44,9 @@ const InputForm = ({ dispatch }) => {
 	);
 };
 
-export default connect()(InputForm);
+InputForm.propTypes = {
+	addItem: PropTypes.func.isRequired,
+	toggleAllItems: PropTypes.func.isRequired,
+};
+
+export default InputForm;

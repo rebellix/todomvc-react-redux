@@ -1,18 +1,22 @@
 import React from 'react';
-import ActiveItemsCounter from '../containers/ActiveItemsCounter';
-import FilterLink from '../containers/FilterLink';
-import ClearCompletedButton from '../containers/ClearCompletedButton';
-import { FilterOptions } from '../actions';
+
+import CounterButton from './CounterButton';
+import FilterLink from './FilterLink';
+import ClearButton from './ClearButton';
+
+import { FilterOptions } from '../../store/actions/types';
+
+import './Footer.css';
 
 const Footer = () => (
 	<div className="btn-group" role="group">
-		<ActiveItemsCounter className="btn btn-light"></ActiveItemsCounter>
+		<CounterButton className="btn btn-light"></CounterButton>
 		<div className="filter-section">
 			<FilterLink filter={FilterOptions.SHOW_ALL_ITEMS}>All</FilterLink>
 			<FilterLink filter={FilterOptions.SHOW_ACTIVE_ITEMS}>Active</FilterLink>
 			<FilterLink filter={FilterOptions.SHOW_COMPLETED_ITEMS}>Completed</FilterLink>
 		</div>
-		<ClearCompletedButton className="btn btn-light"></ClearCompletedButton>
+		<ClearButton className="btn btn-light"></ClearButton>
 	</div>
 );
 

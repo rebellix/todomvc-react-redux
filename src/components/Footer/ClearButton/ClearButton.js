@@ -6,7 +6,7 @@ const ClearButton = ({ onClick }) => (
 		onClick={onClick}
 		className="btn btn-light"
 	>
-        Clear completed
+		Clear completed
 	</button>
 );
 
